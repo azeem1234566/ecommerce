@@ -46,7 +46,7 @@ const Cart = () => {
         >
           <span
             onClick={() => setIsModalOpen(false)}
-            className="absolute top-12 right-10 z-20 flexRow  rounded-full  bg-white text-primary border-[1px] border-primary hover:border-primary hover:bg-primary text-lg font-semibold hover:text-white transition ease-in-out duration-500 cursor-pointer"
+            className="absolute top-12 right-10 z-20 flexRow  rounded-full  bg-white text-primary border-[1px]  text-lg font-semibold transition ease-in-out duration-500 cursor-pointer"
           >
             <ImCancelCircle className="h-8 w-8" />
           </span>
