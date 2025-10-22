@@ -4,9 +4,9 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-gray-300   md:px-16 pt-12 pb-6">
+    <footer className="bg-black text-gray-300   md:px-16 pt-12 pb-6">
       {/* Top section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-gray-700 pb-10">
+      <div className="grid  grid-cols-2 lg:grid-cols-4 border-b border-gray-700 pb-10">
         {/* Column 1 */}
         <div>
           <h3 className="text-white font-semibold mb-4">Company</h3>
@@ -76,9 +76,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom section */}
-      <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-sm text-gray-500">
-        <div className="flex space-x-3 mb-3 md:mb-0">
-          <img
+      <div className="flex justify-between items-center mt-6">
+         <img
             src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
             alt="Visa"
             className="h-5"
@@ -88,29 +87,25 @@ const Footer = () => {
             alt="Mastercard"
             className="h-5"
           />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg"
-            alt="Discover"
-            className="h-5"
-          />
+         
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
             alt="PayPal"
             className="h-5"
           />
-        </div>
 
-        <div className="flex items-center justify-between ">
-          <Link
+       <Link
             to={"/"}
             className="logo rounded-full text-white p-2 font-bold text-2xl font-serif"
           >
-            <i className="mr-16">Granduer</i>
+            Granduer
           </Link>
-          <p>@2024 Theme by anariel design. Proudly powered by WordPress.</p>
-        </div>
+          
+        
+      
       </div>
-    </footer>
+      <p className="text-center mt-9">@2024 Theme by anariel design. Proudly powered by WordPress.</p>
+         </footer>
   );
 };
 

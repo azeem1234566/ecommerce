@@ -30,7 +30,7 @@ import {
 } from "react-share";
 // import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { BarLoader, ClipLoader } from "react-spinners";
+import { BarLoader, ClipLoader, SyncLoader } from "react-spinners";
 import { Link, NavLink } from "react-router-dom";
 import { FaArrowCircleRight, FaHeart, FaShoppingCart } from "react-icons/fa";
 import Test from "../Components/HomeComponents/Test";
@@ -48,12 +48,14 @@ const Home = () => {
   // const notifyDelete = () => toast.error("Unable to add to cart!");
   // const { HandleGetProducts } = useContext(ProductContext);
 
-  useEffect(() => {
+
+    useEffect(() => {
     HandleGetProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
+
+   useEffect(() => {
     console.log("productData:", productData);
 
     if (productData) {
@@ -68,9 +70,14 @@ const Home = () => {
     }
   }, [productData]);
 
+ 
+  if (!productData) {
+    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+  }
+
   return (
     <Layout>
-      <div className=" bg-primary  flex  justify-center flex-col min-h-screen mb-12">
+      <div className=" bg-primary  flex   justify-center flex-col min-h-screen mb-12">
         {/* <div style={{ width: "200px" }}>
           <LinesEllipsis
             text="This is a very long sentence that should be truncated after two lines."
@@ -184,10 +191,10 @@ const Home = () => {
         </div>
         <div className=" flex items-center justify-center mt-8">
           <div className="rounded-3xl bg-white p-2 text-primary w-40  flex items-center justify-center gap-2">
-            <Link>New collection</Link>
-            <p>
+            <Link >New collection</Link>
+            <Link to={"/newArrivals"}>
               <FaArrowCircleRight className="font-bold text-xl" />
-            </p>
+            </Link>
           </div>
         </div>
         <div className="w-full md:px-4 px-28 pb-16 flex flex-col justify-center items-center relative ">

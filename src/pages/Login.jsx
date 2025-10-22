@@ -12,6 +12,8 @@ const Login = () => {
   const HandlLog = () => {
     setIsRegister(false);
   };
+
+  
   return (
     <Layout>
       <div className="min-h-screen  bg-primary  flex flexCol w-full px-4 md:px-0 ">
@@ -22,8 +24,8 @@ const Login = () => {
                 onClick={() => HandlLog()}
                 className={`w-1/2 p-4 cursor-pointer  ${
                   isRegister
-                    ? "bg-white text-primary border-primary "
-                    : "bg-primary text-white "
+                    ? "bg-primary text-white border-primary "
+                    : "bg-white text-primary "
                 }`}
               >
                 Login
@@ -32,8 +34,8 @@ const Login = () => {
                 onClick={() => HandleReg()}
                 className={` cursor-pointer  w-1/2 p-4   ${
                   isRegister
-                    ? "bg-primary text-white "
-                    : "bg-white text-primary "
+                    ? "bg-white text-primary "
+                    : "bg-primary text-white "
                 }`}
               >
                 Register
@@ -41,7 +43,7 @@ const Login = () => {
             </div>
           )}
           {isRegister === true && isForgetPass === false && (
-            <form className=" rounded-md  p-4 flexCol gap-6 w-full">
+            <form className="  bg-white  p-4 flexCol gap-6 w-full">
               <Input type={"text"} labelFor={"Name"} placehold={"John Doe"} />
               <Input
                 type={"email"}
@@ -53,28 +55,36 @@ const Login = () => {
                 labelFor={"Phone"}
                 placehold={"09074639302"}
               />
+
+              <button className=" bg-primary text-white py-3 px-10 rounded-lg ">Sign Up</button>
             </form>
           )}
 
           {isRegister === false && isForgetPass === false && (
-            <form className="rounded-md  p-4 flexCol gap-6 ">
+            <form className="  bg-white p-4 flexCol gap-6 ">
               <Input type={"text"} labelFor={"Email"} placehold={"Email"} />
               <Input
                 type={"password"}
                 labelFor={"Password"}
                 placehold={"Password"}
               />
+
+
+              <button className=" bg-primary text-white py-3 px-10 rounded-lg ">Login</button>
+
               <p
-                onClick={() => setIsForgetPass(true)}
-                className="text-white font-semibold text-lg cursor-pointer"
+               
+                className=""
               >
-                Forgot Password
+                can't remember password?<span  onClick={() => setIsForgetPass(true)} className="underline text-black  font-semibold text-lg cursor-pointer">Forgot Password</span>
               </p>
             </form>
           )}
 
           {isForgetPass && (
-            <form className="rounded-md  p-4 flexCol gap-6 ">
+            <form className=" bg-white p-4 flexCol gap-6 ">
+
+              <h1 className="text-2xl font-semibold">Reset Password</h1>
               <Input
                 type={"email"}
                 labelFor={"Email"}
@@ -88,7 +98,7 @@ const Login = () => {
 
               <p
                 onClick={() => setIsForgetPass(false)}
-                className="text-white font-semibold text-lg cursor-pointer"
+                className="text-black underline font-semibold text-lg cursor-pointer"
               >
                 Back To Login
               </p>

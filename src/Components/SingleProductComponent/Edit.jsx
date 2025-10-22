@@ -17,21 +17,21 @@ const Edit = ({
   //   }, [product]);
 
   return (
-    <div>
+    <div className="mt-32" >
       <p className="text-2xl font-semibold text-center">Edit Cart</p>
-      <div className="p-6 max-w-3xl mx-auto bg-white rounded-2xl shadow-md ">
+      <div className="p-6 max-w-3xl mx-auto  bg-white rounded-2xl shadow-md ">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Product Image */}
           <img
             src={prod?.image}
             alt={prod?.name}
-            className="w-full h-full md:w-1/2  object-cover rounded-xl"
+            className="lg:w-full lg:h-full md:w-1/2 hidden object-cover rounded-xl"
           />
 
           {/* Product Info */}
           <div className="flex-1">
             <h1 className="text-3xl font-bold mb-2">{prod?.name}</h1>
-            <p className="text-gray-600 mb-3">{prod?.description}</p>
+            <p className="text-gray-600 mb-3 hidden lg:block">{prod?.description}</p>
 
             <div className="mb-4">
               <p className="text-xl font-semibold text-green-700">
@@ -132,13 +132,13 @@ const Edit = ({
                 e.preventDefault();
                 HandleUpdateCart(prod);
               }}
-              className="mt-4 w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-800 transition-all"
+              className="mt-2 w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-800 transition-all"
             >
               Update Cart
             </button>
 
             {/* Rating and Best Seller */}
-            <div className="flex items-center gap-4 mt-6">
+            <div className=" items-center hidden lg:flex gap-4 mt-6">
               <p className="text-yellow-500 font-semibold">
                 ⭐ {prod?.rating} / 5
               </p>

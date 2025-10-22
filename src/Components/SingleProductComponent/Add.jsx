@@ -12,7 +12,7 @@ const Add = ({
 }) => {
   const { HandleAddTCart } = useContext(ProductContext);
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <p className="text-2xl font-semibold text-center">Add Cart</p>
       <div className="p-6 max-w-3xl mx-auto bg-white rounded-2xl shadow-md ">
         <div className="flex flex-col md:flex-row gap-6">

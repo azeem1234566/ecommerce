@@ -8,6 +8,7 @@ import Edit from "../Components/SingleProductComponent/Edit";
 import { ImCancelCircle } from "react-icons/im";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { SyncLoader } from "react-spinners";
 
 const Cart = () => {
   const { cartItems, cartcout, HandleDeleteCart } = useContext(ProductContext);
@@ -16,6 +17,7 @@ const Cart = () => {
   const [selectedSize, setSetectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
+    const [loading, setLoading] = useState(true);
   // useEffect(() => {
   //   console.log("cartItemss:", cartItems);
   // }, [cartItems]);
@@ -31,6 +33,20 @@ const Cart = () => {
       setProd((prv) => ({ ...prv, quantity: quantity }));
     }
   }, [selectedColor, selectedSize, quantity]);
+
+  
+    useEffect(() => {
+      // Simulate loading time (like fetching data)
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer);
+    }, []);
+  
+
+ if (loading) {
+      return (
+        <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+      );
+    }
   return (
    
    
@@ -38,15 +54,15 @@ const Cart = () => {
       <div className="min-h-screen bg-white  py-10 px-4 md:px-10 relative  ">
         <h1 className="text-3xl font-bold text-center mb-8">Your Cart</h1>
 
-       <div className=" flexCol">
+       <div className=" ">
          <div
           className={` ${
             isModalOpen ? "" : "hidden"
-          } modal min-h-screen   inset-0 bg-black/30 backdrop-blur-sm z-10 pb-[25rem]  mb-[23rem] absolute w-[100%] top-0 `}
+          } modal lg:min-h-screen h-full   inset-0 bg-black/30 backdrop-blur-sm z-10 pb-[25rem]  mb-[23rem] absolute w-[100%] top-0 `}
         >
           <span
             onClick={() => setIsModalOpen(false)}
-            className="absolute top-12 right-10 z-20 flexRow  rounded-full  bg-white text-primary border-[1px]  text-lg font-semibold transition ease-in-out duration-500 cursor-pointer"
+            className="absolute top-12 right-1 lg:right-10 z-20 flexRow  rounded-full  bg-white text-primary border-[1px]  text-lg font-semibold transition ease-in-out duration-500 cursor-pointer"
           >
             <ImCancelCircle className="h-8 w-8" />
           </span>
@@ -147,8 +163,18 @@ const Cart = () => {
                       Total: ${item.price * item.quantity}
                     </span>
                   </div>
+<button onClick={() => {
+                          console.log("item:", item);
 
-                  <button className="mt-2 w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
+                          setIsModalOpen(true);
+                          setProd(item);
+                        }} className="mt-2 w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
+                    Edit
+                  </button>
+                  <button  onClick={(e) => {
+                          e.preventDefault();
+                          HandleDeleteCart(item)
+                        }} className="mt-2 w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
                     Remove
                   </button>
                 </div>

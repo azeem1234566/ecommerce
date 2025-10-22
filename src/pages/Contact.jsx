@@ -1,7 +1,22 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Layout from "../Shared/Layout/Layout";
+import { useEffect, useState } from "react";
+import { SyncLoader } from "react-spinners";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      // Simulate loading time (like fetching data)
+      const timer = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timer);
+    }, []);
+  
+    if (loading) {
+      return (
+        <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+      );
+    }
   return (
     <Layout>
       <div className="flex flex-col min-h-screen">
@@ -15,10 +30,10 @@ const Contact = () => {
         </section>
 
         {/* === CONTACT FORM & INFO === */}
-        <section className="bg-white py-20 px-6 md:px-16 lg:px-24 text-gray-800">
+        <section className="bg-primary py-20 px-6 md:px-16 lg:px-24 text-gray-800">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex bg-white rounded-md p-7 flex-col justify-center space-y-6">
               <h2 className="text-3xl font-bold text-primary mb-4">
                 Get in Touch
               </h2>
@@ -44,7 +59,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div>
-              <form className="flex flex-col gap-4">
+              <form className="flex rounded-md bg-white p-10 flex-col gap-4">
                 <input
                   type="text"
                   placeholder="Your Name"

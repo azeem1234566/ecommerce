@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Layout from "../Shared/Layout/Layout";
 import Edit from "../Components/SingleProductComponent/Edit";
 import Add from "../Components/SingleProductComponent/Add";
+import { SyncLoader } from "react-spinners";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -43,7 +44,7 @@ const SingleProduct = () => {
 
   if (!product) {
     return (
-      <p className="text-center text-gray-500 mt-10">Loading product...</p>
+       <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>
     );
   }
 

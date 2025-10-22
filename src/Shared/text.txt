@@ -131,3 +131,41 @@
       console.log(error.message);
     }
   };
+
+
+
+   <div className="flex flex-col md:flex-row items-center justify-between md:gap-10 mt-6 text-sm text-gray-500">
+        <div className="flex space-x-3 mb-3 md:mb-0">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+            alt="Visa"
+            className="h-5"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg"
+            alt="Mastercard"
+            className="h-5"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg"
+            alt="Discover"
+            className="h-5"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+            alt="PayPal"
+            className="h-5"
+          />
+        </div>
+
+       
+          <Link
+            to={"/"}
+            className="logo rounded-full text-white p-2 font-bold text-2xl font-serif"
+          >
+            <i className="mr-16">Granduer</i>
+          </Link>
+          <span>@2024 Theme by anariel design. Proudly powered by WordPress.</span>
+        
+      </div>
+

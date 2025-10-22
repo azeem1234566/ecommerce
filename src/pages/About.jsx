@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import Layout from "../Shared/Layout/Layout";
+import { SyncLoader } from "react-spinners";
+import { useLocation } from "react-router-dom";
 
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time (like fetching data)
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+    );
+  }
   return (
     <Layout>
       <div className="flex flex-col min-h-screen">

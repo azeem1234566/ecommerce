@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import Layout from "../Shared/Layout/Layout";
+import { SyncLoader } from "react-spinners";
 
 const WomensCloths = () => {
   const [few, setFew] = useState(null);
   const [fewDisplay, setFewDisplay] = useState(true);
   const [Men, setMen] = useState(null);
-  const { HandleGetProducts, productData } = useContext(ProductContext);
+ const { HandleGetProducts, productData, HandleAddTCart } =
+    useContext(ProductContext);
 
   useEffect(() => {
     HandleGetProducts();
@@ -29,9 +31,14 @@ const WomensCloths = () => {
       }
     }
   }, [productData]);
+
+   if (!productData) {
+    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+  }
+
   return (
     <Layout>
-      <div className="bg-white lg:pt-12 pt-2 pb-12">
+      <div className="bg-white lg:pt-12 min-h-screen pt-2 pb-12">
         <p className="text-center text-primary text-2xl font-semibold w-full mt-8 ">
           Women's Cloth
         </p>
@@ -44,18 +51,18 @@ const WomensCloths = () => {
             <>
               {few &&
                 few?.map((few) => (
-                  <Link
-                    to={`/product/${few?.id}`}
+                  <div
+                    key={few?.id}
                     className="hover:shadow-2xl transition ease-in-out duration-500 rounded-md overflow-hidden "
                   >
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
-                      <div className="w-full h-full">
+                      <Link to={`/product/${few?.id}`} className="w-full h-full">
                         <img
                           src={few?.image}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />
-                      </div>
+                      </Link>
                     </div>
                     <div className="p-2">
                       <p className="text-black font-bold mt-2 ">{few?.name}</p>
@@ -76,31 +83,38 @@ const WomensCloths = () => {
                           <span className="rounded-full p-2 bg-white border-[1px] border-primary flex justify-center items-center">
                             <FaHeart className="h-6 w-6 " />
                           </span>
-                          <span className=" rounded-full p-2 text-white bg-primary flex justify-center items-center">
+                          <span onClick={() =>
+                                HandleAddTCart(
+                                  few,
+                                  1,
+                                  few?.defaultSize,
+                                  few?.defaultColor
+                                )
+                              }  className=" rounded-full p-2 text-white bg-primary flex justify-center items-center">
                             <FaShoppingCart className="h-6 w-6" />
                           </span>
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
             </>
           ) : (
             <>
               {Men &&
                 Men?.map((best) => (
-                  <Link
-                    to={`/product/${best?.id}`}
+                  <div
+                    key={best.id}
                     className="hover:shadow-2xl transition ease-in-out duration-500 rounded-md overflow-hidden "
                   >
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
-                      <div className="w-full h-full">
+                      <Link to={`/product/${best?.id}`} className="w-full h-full">
                         <img
                           src={best?.image}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />
-                      </div>
+                      </Link>
                     </div>
                     <div className="p-2">
                       <p className="text-black font-bold mt-2 ">{best?.name}</p>
@@ -127,12 +141,20 @@ const WomensCloths = () => {
                             <FaHeart className="h-6 w-6 " />
                           </span>
                           <span className=" rounded-full p-2 text-white bg-primary flex justify-center items-center">
-                            <FaShoppingCart className="h-6 w-6" />
+                            <FaShoppingCart 
+                            onClick={() =>
+                                HandleAddTCart(
+                                  best,
+                                  1,
+                                  best?.defaultSize,
+                                  best?.defaultColor
+                                )
+                              } className="h-6 w-6" />
                           </span>
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
             </>
           )}
