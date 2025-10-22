@@ -15,7 +15,7 @@ const About = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+      <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80  text-3xl"> <SyncLoader /></div>
     );
   }
   return (

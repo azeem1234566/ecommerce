@@ -56,7 +56,7 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 left-0  z-40 ">
+    <div className="sticky top-0 left-0  z-40 shadow-2xl">
       {/* LargeScreenNav */}
       <div className="hidden lg:block">
         <div className=" w-full bg-primary px-6 lg:px-16 py-6 flex items-center justify-between text-white">

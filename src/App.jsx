@@ -7,7 +7,7 @@ function App() {
     <>
       <ToastContainer
         position="top-right"
-        autoClose={3000}
+        autoClose={800}
         hideProgressBar
         pauseOnHover
         theme="colored" // optional, adds nice look

@@ -13,7 +13,7 @@ const Login = () => {
     setIsRegister(false);
   };
 
-  
+
   return (
     <Layout>
       <div className="min-h-screen  bg-primary  flex flexCol w-full px-4 md:px-0 ">
@@ -72,12 +72,9 @@ const Login = () => {
 
               <button className=" bg-primary text-white py-3 px-10 rounded-lg ">Login</button>
 
-              <p
-               
-                className=""
-              >
-                can't remember password?<span  onClick={() => setIsForgetPass(true)} className="underline text-black  font-semibold text-lg cursor-pointer">Forgot Password</span>
-              </p>
+           
+                <span  onClick={() => setIsForgetPass(true)} className="underline text-black  font-semibold text-lg cursor-pointer">Forgot Password</span>
+            
             </form>
           )}
 
@@ -106,6 +103,7 @@ const Login = () => {
           )}
         </div>
       </div>
+      {/* <div className="animate-bounce h-12 w-12 border-2 border-blue-500 bg-blue-500 border-t-transparent rounded-full"></div> */}
     </Layout>
   );
 };

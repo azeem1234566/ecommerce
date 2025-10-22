@@ -18,7 +18,7 @@ const Add = ({
         <div className="flex flex-col md:flex-row gap-6">
           {/* Product Image */}
           <img
-            src={product.image}
+            src={`${product.image}`}
             alt={product.name}
             className="w-full md:w-1/2 h-80 object-cover rounded-xl"
           />

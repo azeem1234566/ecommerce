@@ -14,7 +14,7 @@ const Contact = () => {
   
     if (loading) {
       return (
-        <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+        <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80  text-3xl"> <SyncLoader /></div>
       );
     }
   return (
@@ -30,7 +30,7 @@ const Contact = () => {
         </section>
 
         {/* === CONTACT FORM & INFO === */}
-        <section className="bg-primary py-20 px-6 md:px-16 lg:px-24 text-gray-800">
+        <section className="bg-primary min-h-screen py-20 px-6 md:px-16 lg:px-24 text-gray-800">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="flex bg-white rounded-md p-7 flex-col justify-center space-y-6">

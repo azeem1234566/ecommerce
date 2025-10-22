@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import Layout from "../Shared/Layout/Layout";
+import { SyncLoader } from "react-spinners";
 
 const MensCloth = () => {
   const [few, setFew] = useState(null);
@@ -32,7 +33,7 @@ const MensCloth = () => {
   }, [productData]);
 
    if (!productData) {
-    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+    return <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 items-center text-3xl"> <SyncLoader /></div>;
   }
 
   return (
@@ -57,7 +58,7 @@ const MensCloth = () => {
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
                       <Link to={`/product/${few?.id}`} className="w-full h-full">
                         <img
-                          src={few?.image}
+                          src={`${few?.image}`}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />
@@ -109,7 +110,7 @@ const MensCloth = () => {
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
                       <Link  to={`/product/${best?.id}`} className="w-full h-full">
                         <img
-                          src={best?.image}
+                          src={`${best?.image}`}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />

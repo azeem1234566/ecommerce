@@ -72,7 +72,7 @@ const Home = () => {
 
  
   if (!productData) {
-    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+    return <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 items-center text-3xl"> <SyncLoader /></div>;
   }
 
   return (
@@ -215,7 +215,7 @@ const Home = () => {
             lazy="true"
             modules={[Autoplay, Navigation]}
             breakpoints={{
-              640: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
               768: { slidesPerView: 3 },
               1024: { slidesPerView: 5 },
             }}
@@ -229,7 +229,7 @@ const Home = () => {
                     className="w-full h-full"
                   >
                     <img
-                      src={product?.image}
+                      src={`${product?.image}`}
                       alt="Fashio"
                       className="  object-cover w-full h-full  "
                     />
@@ -268,7 +268,7 @@ const Home = () => {
                           className="w-full h-full"
                         >
                           <img
-                            src={few?.image}
+                            src={`${few?.image}`}
                             alt="Fashio"
                             className="  object-cover w-full h-full  "
                           />
@@ -328,7 +328,7 @@ const Home = () => {
                           className="w-full h-full"
                         >
                           <img
-                            src={best?.image}
+                            src={`${best?.image}`}
                             alt="Fashio"
                             className="  object-cover w-full h-full  "
                           />

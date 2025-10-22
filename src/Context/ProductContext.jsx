@@ -57,14 +57,14 @@ const ProductProvide = ({ children }) => {
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
-        toast.info("Existing item quantity added to cart Succesfully!");
+        toast.info("Quantity of product has been increased!");
       } else {
         // Add a new product entry if it doesn’t exist
         updatedCartItems = [
           ...storedCartItems,
           { ...prod, quantity, size, color },
         ];
-        toast.success("Item Added to cart Succesfully!");
+        toast.success("Product Added to cart Succesfully!");
       }
 
       // Save updated cart in localStorage
@@ -123,7 +123,7 @@ const ProductProvide = ({ children }) => {
         );
 
         if (!existingItem) {
-          toast.error("Product not foun in cartItems");
+          toast.error("Product not found in cartItems");
           return;
         }
 
@@ -133,6 +133,7 @@ const ProductProvide = ({ children }) => {
 
         localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
         setCartItems(updatedCartItems);
+        toast.success("Product removed from cart successfully!");
       } else {
         console.log("Authentified user");
       }

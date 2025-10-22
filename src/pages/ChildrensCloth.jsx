@@ -35,7 +35,7 @@ const ChildrensCloth = () => {
   }, [productData]);
 
    if (!productData) {
-    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+    return <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 items-center text-3xl"> <SyncLoader /></div>;
   }
 
   return (

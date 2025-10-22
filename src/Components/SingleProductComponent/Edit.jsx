@@ -17,15 +17,15 @@ const Edit = ({
   //   }, [product]);
 
   return (
-    <div className="mt-32" >
-      <p className="text-2xl font-semibold text-center">Edit Cart</p>
+    <div className="mt-10 lg:mt-0" >
+      <p className="text-2xl  font-semibold text-center">Edit Cart</p>
       <div className="p-6 max-w-3xl mx-auto  bg-white rounded-2xl shadow-md ">
-        <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-col lg:flex-col  md:flex-row gap-6">
           {/* Product Image */}
           <img
-            src={prod?.image}
+            src={`${prod?.image}`}
             alt={prod?.name}
-            className="lg:w-full lg:h-full md:w-1/2 hidden object-cover rounded-xl"
+            className="lg:w-full lg:h-full md:w-1/2 hidden  object-cover rounded-xl"
           />
 
           {/* Product Info */}

@@ -34,7 +34,7 @@ const NewArrivals = () => {
   }, [productData]);
 
    if (!productData) {
-    return <div className="flex justify-center mt-80 items-center text-3xl"> <SyncLoader /></div>;
+    return <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 items-center text-3xl"> <SyncLoader /></div>;
   }
 
   return (
@@ -59,7 +59,7 @@ const NewArrivals = () => {
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
                       <Link to={`/product/${few?.id}`} className="w-full h-full">
                         <img
-                          src={few?.image}
+                          src={`${few?.image}`}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />
@@ -111,7 +111,7 @@ const NewArrivals = () => {
                     <div className="w-full  h-[26rem]  overflow-hidden  ">
                       <Link to={`/product/${best?.id}`} className="w-full h-full">
                         <img
-                          src={best?.image}
+                          src={`${best?.image}`}
                           alt="Fashio"
                           className="  object-cover w-full h-full  "
                         />

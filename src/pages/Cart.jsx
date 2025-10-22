@@ -9,6 +9,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { SyncLoader } from "react-spinners";
+import { BiDiamond } from "react-icons/bi";
 
 const Cart = () => {
   const { cartItems, cartcout, HandleDeleteCart } = useContext(ProductContext);
@@ -44,7 +45,7 @@ const Cart = () => {
 
  if (loading) {
       return (
-        <div className="flex justify-center mt-80  text-3xl"> <SyncLoader /></div>
+        <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 text-3xl"> <SyncLoader /></div>
       );
     }
   return (
@@ -207,7 +208,8 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center mt-20 text-gray-600">
+         <div className="flex justify-center items-center lg:mt-48 md:mt-72 mt-52">
+           <div className="flex flex-col  items-center justify-center  text-gray-600">
             <p className="text-xl mb-4">Your cart is currently empty 🛒</p>
             <a
               href="/"
@@ -216,6 +218,7 @@ const Cart = () => {
               Continue Shopping
             </a>
           </div>
+         </div>
         )}
       </div>
     </Layout>
