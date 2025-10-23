@@ -9,7 +9,7 @@ const About = () => {
 
   useEffect(() => {
     // Simulate loading time (like fetching data)
-    const timer = setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);
 

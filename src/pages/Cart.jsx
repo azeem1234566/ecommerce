@@ -38,7 +38,7 @@ const Cart = () => {
   
     useEffect(() => {
       // Simulate loading time (like fetching data)
-      const timer = setTimeout(() => setLoading(false), 1000);
+      const timer = setTimeout(() => setLoading(false), 700);
       return () => clearTimeout(timer);
     }, []);
   

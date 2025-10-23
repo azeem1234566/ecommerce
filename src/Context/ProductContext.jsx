@@ -21,10 +21,10 @@ const ProductProvide = ({ children }) => {
   }, [cartItems]);
   const HandleGetProducts = async () => {
     try {
-      const res = await fetch("http://localhost:8000/products", {
+      const res = await fetch("/data/data.json", {
         method: "GET",
       });
-
+// "http://localhost:8000/products"
       const data = await res.json();
 
       if (res.ok) {
