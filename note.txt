@@ -353,3 +353,24 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
+my fetch
+
+const HandleGetProducts = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/products", {
+        method: "GET",
+      });
+// http://localhost:8000/products
+      const data = await res.json();
+
+      if (res.ok) {
+        console.log(data);
+        setProductData(data);
+        localStorage.setItem("productData", JSON.stringify(data));
+      } else {
+        console.log("Unable to fetch data");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };

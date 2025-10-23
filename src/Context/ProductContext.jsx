@@ -20,24 +20,20 @@ const ProductProvide = ({ children }) => {
     }
   }, [cartItems]);
   const HandleGetProducts = async () => {
-    try {
-      const res = await fetch("/data/data.json", {
-        method: "GET",
-      });
-// "http://localhost:8000/products"
-      const data = await res.json();
+  try {
+    const res = await fetch("/data/data.json"); // ✅ No localhost, fetches from public
+    const data = await res.json();
 
-      if (res.ok) {
-        console.log(data);
-        setProductData(data);
-        localStorage.setItem("productData", JSON.stringify(data));
-      } else {
-        console.log("Unable to fetch data");
-      }
-    } catch (error) {
-      console.log(error.message);
+    if (res.ok) {
+      setProductData(data.products); // if your JSON is { "products": [...] }
+      localStorage.setItem("productData", JSON.stringify(data.products));
+    } else {
+      console.log("Unable to fetch data");
     }
-  };
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
   const HandleAddTCart = (prod, quantity = null, size = null, color = null) => {
     if (!isAuthentified) {

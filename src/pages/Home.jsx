@@ -259,6 +259,7 @@ const Home = () => {
                 {few &&
                   few?.map((few) => (
                     <div
+                    key={few.id}
                       to={`/product/${few?.id}`}
                       className="hover:shadow-2xl transition ease-in-out duration-500 rounded-md overflow-hidden "
                     >
