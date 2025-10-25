@@ -6,6 +6,7 @@ import { FiSearch } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import { ProductContext } from "../../Context/ProductContext";
 import { BiLogIn } from "react-icons/bi";
+import Search from "../Search";
 
 const Navbar = () => {
   const { cartCout } = useContext(ProductContext);
@@ -85,21 +86,8 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:block">
-
-             {searchOpen && (
-            <div className="bg-primary py-2 flex justify-center absolute  items-center z-20 left-16 md:left-[30%] w-[50%] md:w-[40%]">
-              <div className="flex items-center bg-white border w-full border-gray-300 rounded-3xl overflow-hidden ">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="flex-grow px-4 py-2 text-black text-sm outline-none"
-                />
-                <button className="px-3 text-black">
-                  <FiSearch />
-                </button>
-              </div>
-            </div>
-          )}
+<Search  searchOpen={searchOpen}
+setSearchOpen={setSearchOpen} />
             <div className="cartSearch flex justify-center items-center gap-4 text-sm">
               <span onClick={() => setSearchOpen((prev) => !prev)} className="border-[1px] border-white bg-black  p-[7px] text-sm  hover:bg-white hover:text-black transition ease-in-out duration-300 rounded-3xl cursor-pointer">
                 <FiSearch />
@@ -142,21 +130,10 @@ const Navbar = () => {
 
       {/* SmallScreen */}
       <div className="lg:hidden block">
-        <div className=" relative w-full bg-primary px-6 lg:px-16 py-6 flex items-center justify-between text-white">
-          {searchOpen && (
-            <div className="bg-primary py-2 flex justify-center absolute items-center z-20 left-16 md:left-[30%] w-[50%] md:w-[40%]">
-              <div className="flex items-center bg-white border w-full border-gray-300 rounded-3xl overflow-hidden ">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="flex-grow px-4 py-2 text-black text-sm outline-none"
-                />
-                <button className="px-3 text-black">
-                  <FiSearch />
-                </button>
-              </div>
-            </div>
-          )}
+                <Search  searchOpen={searchOpen}
+setSearchOpen={setSearchOpen} />
+        <div className=" relative w-full bg-primary px-2  lg:px-16 py-6 flex items-center justify-between text-white">
+      
           {/* <div className="cartSearch flex justify-center items-center gap-4 text-sm">
             <NavLink
               className={({ isActive }) =>
@@ -178,9 +155,7 @@ const Navbar = () => {
           <div className="flex relative  items-center gap-3 lg:hidden">
             <NavLink
               to={"/cart"}
-              className={`${
-                searchOpen ? "md:block hidden" : ""
-              } border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
+              className={` border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
             >
               <FaShoppingCart />
               <span className="absolute    -top-1 -right-2 h-5 w-5 p-2 rounded-full bg-red-600 text-white flex justify-center items-center font-bold">
@@ -195,7 +170,7 @@ const Navbar = () => {
             </button>
           </div>
           {/* logo */}
-          <Link to={"/"} className="logo font-bold font-serif italic text-2xl">
+          <Link to={"/"} className={`logo font-bold font-serif italic text-2xl ${searchOpen === true ? "hidden" : ""}`}>
             Granduer
           </Link>
 
@@ -245,6 +220,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
+                
         </div>
       </div>
     </div>
