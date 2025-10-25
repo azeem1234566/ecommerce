@@ -155,7 +155,7 @@ setSearchOpen={setSearchOpen} />
           <div className="flex relative  items-center gap-3 lg:hidden">
             <NavLink
               to={"/cart"}
-              className={` border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
+              className={`${searchOpen ? "hidden" : ""} border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
             >
               <FaShoppingCart />
               <span className="absolute    -top-1 -right-2 h-5 w-5 p-2 rounded-full bg-red-600 text-white flex justify-center items-center font-bold">
