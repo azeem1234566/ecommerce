@@ -1,5 +1,5 @@
 // import { useRef, useState } from "react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
@@ -9,7 +9,11 @@ import { BiLogIn } from "react-icons/bi";
 import Search from "../Search";
 
 const Navbar = () => {
-  const { cartCout } = useContext(ProductContext);
+  const { cartCout, productData } = useContext(ProductContext);
+  
+
+
+ 
   const navlinks = [
     {
       id: 1,
@@ -58,6 +62,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 left-0  z-40 shadow-2xl">
+  
       {/* LargeScreenNav */}
       <div className="hidden lg:block">
         <div className=" w-full bg-primary px-6 lg:px-16 py-6 flex items-center justify-between text-white">
@@ -88,6 +93,8 @@ const Navbar = () => {
           <div className="hidden lg:block">
 <Search  searchOpen={searchOpen}
 setSearchOpen={setSearchOpen} />
+
+
             <div className="cartSearch flex justify-center items-center gap-4 text-sm">
               <span onClick={() => setSearchOpen((prev) => !prev)} className="border-[1px] border-white bg-black  p-[7px] text-sm  hover:bg-white hover:text-black transition ease-in-out duration-300 rounded-3xl cursor-pointer">
                 <FiSearch />
@@ -131,7 +138,7 @@ setSearchOpen={setSearchOpen} />
       {/* SmallScreen */}
       <div className="lg:hidden block">
                 <Search  searchOpen={searchOpen}
-setSearchOpen={setSearchOpen} />
+setSearchOpen={setSearchOpen}   />
         <div className=" relative w-full bg-primary px-2  lg:px-16 py-6 flex items-center justify-between text-white">
       
           {/* <div className="cartSearch flex justify-center items-center gap-4 text-sm">
@@ -155,7 +162,7 @@ setSearchOpen={setSearchOpen} />
           <div className="flex relative  items-center gap-3 lg:hidden">
             <NavLink
               to={"/cart"}
-              className={`${searchOpen ? "hidden" : ""} border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
+              className={` border-[1px] border-white bg-black p-[7px] relative rounded-3xl text-sm`}
             >
               <FaShoppingCart />
               <span className="absolute    -top-1 -right-2 h-5 w-5 p-2 rounded-full bg-red-600 text-white flex justify-center items-center font-bold">
