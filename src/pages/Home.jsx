@@ -1,5 +1,5 @@
 import LinesEllipsis from "react-lines-ellipsis";
-import Layout from "../Shared/Layout/Layout";
+
 
 import { EffectFlip, Pagination, EffectFade } from "swiper/modules";
 
@@ -36,6 +36,7 @@ import { FaArrowCircleRight, FaHeart, FaShoppingCart } from "react-icons/fa";
 import Test from "../Components/HomeComponents/Test";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../Context/ProductContext";
+import Layout from "../shared/Layout/Layout";
 
 const Home = () => {
   const { HandleGetProducts, productData, HandleAddTCart } =
