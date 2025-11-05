@@ -1,7 +1,8 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import Layout from "../Shared/Layout/Layout";
+
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
+import Layout from "../shared/Layout/Layout";
 
 const Contact = () => {
   const [loading, setLoading] = useState(true);

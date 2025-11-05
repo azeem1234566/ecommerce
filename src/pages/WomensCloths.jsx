@@ -3,8 +3,9 @@ import { ProductContext } from "../Context/ProductContext";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
-import Layout from "../Shared/Layout/Layout";
+
 import { SyncLoader } from "react-spinners";
+import Layout from "../shared/Layout/Layout";
 
 const WomensCloths = () => {
   const [few, setFew] = useState(null);

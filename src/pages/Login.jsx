@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "../Shared/Input";
-import Layout from "../Shared/Layout/Layout";
+import Layout from "../shared/Layout/Layout";
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);

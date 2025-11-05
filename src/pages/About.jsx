@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Layout from "../Shared/Layout/Layout";
+
 import { SyncLoader } from "react-spinners";
 import { useLocation } from "react-router-dom";
+import Layout from "../shared/Layout/Layout";
 
 
 const About = () => {

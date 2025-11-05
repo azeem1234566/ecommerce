@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { ProductContext } from "../Context/ProductContext";
-import Layout from "../Shared/Layout/Layout";
+
 import { RiDeleteBin3Fill, RiEditCircleFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Edit from "../Components/SingleProductComponent/Edit";
@@ -10,6 +10,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { SyncLoader } from "react-spinners";
 import { BiDiamond } from "react-icons/bi";
+import Layout from "../shared/Layout/Layout";
 
 const Cart = () => {
   const { cartItems, cartcout, HandleDeleteCart } = useContext(ProductContext);
