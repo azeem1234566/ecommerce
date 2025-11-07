@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../Shared/Input";
 import Layout from "../shared/Layout/Layout";
+import Navbar from "../shared/Navigations/Navbar";
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
@@ -15,7 +16,8 @@ const Login = () => {
 
 
   return (
-    <Layout>
+    <div>
+    <Navbar/>
       <div className="min-h-screen  bg-primary  flex flexCol w-full px-4 md:px-0 ">
         <div className="w-full md:w-1/2 border-2 border-white rounded-md overflow-hidden">
           {isForgetPass === false && (
@@ -104,7 +106,8 @@ const Login = () => {
         </div>
       </div>
       {/* <div className="animate-bounce h-12 w-12 border-2 border-blue-500 bg-blue-500 border-t-transparent rounded-full"></div> */}
-    </Layout>
+    <Footer/>
+      </div>
   );
 };
 

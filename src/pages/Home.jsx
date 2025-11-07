@@ -80,7 +80,8 @@ const Home = () => {
   }
 
   return (
-    <Layout>
+    <div>
+    <Navbar/>
       <div className=" bg-primary  flex   justify-center flex-col min-h-screen mb-12">
         {/* <div style={{ width: "200px" }}>
           <LinesEllipsis
@@ -460,7 +461,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    <Footer/>
+    </div>
   );
 };
 

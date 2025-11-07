@@ -6,6 +6,8 @@ import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import { SyncLoader } from "react-spinners";
 import Layout from "../shared/Layout/Layout";
+import Navbar from "../shared/Navigations/Navbar";
+import Footer from "../shared/Navigations/Footer";
 
 const MensCloth = () => {
   const [few, setFew] = useState(null);
@@ -38,7 +40,8 @@ const MensCloth = () => {
   }
 
   return (
-    <Layout>
+    <div>
+    <Navbar/>
       <div className="bg-white min-h-screen lg:pt-12 pt-2 pb-12">
         <p className="text-center text-primary text-2xl font-semibold w-full mt-8 ">
           Men's Cloth
@@ -178,7 +181,8 @@ const MensCloth = () => {
           )}
         </div>
       </div>
-    </Layout>
+    <Footer/>
+    </div>
   );
 };
 

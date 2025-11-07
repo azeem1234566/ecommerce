@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../Context/ProductContext";
 import { useParams } from "react-router-dom";
 import Layout from "../shared/Layout/Layout";
+import Navbar from "../shared/Navigations/Navbar";
+import Footer from "../shared/Navigations/Footer";
 
 
 const SingleProduct = () => {
@@ -69,7 +71,8 @@ const SingleProduct = () => {
 
 
   return (
-    <Layout>
+    <div>
+    <Navbar/>
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -249,7 +252,8 @@ const SingleProduct = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    <Footer/>
+    </div>
   );
 };
 

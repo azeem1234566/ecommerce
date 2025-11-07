@@ -39,8 +39,10 @@ const ChildrensCloth = () => {
     return <div className="flex justify-center lg:mt-72 md:mt-[28rem] mt-80 items-center text-3xl"> <SyncLoader /></div>;
   }
 
+
   return (
-    <Layout>
+    <div>
+    <Navbar/>
       <div className="bg-white lg:pt-12 min-h-screen pt-2 pb-12">
         <p className="text-center text-primary text-2xl font-semibold w-full mt-8 ">
           Children's Cloth
@@ -181,7 +183,8 @@ const ChildrensCloth = () => {
           )}
         </div>
       </div>
-    </Layout>
+    <Footer/>
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ import { CiEdit } from "react-icons/ci";
 import { SyncLoader } from "react-spinners";
 import { BiDiamond } from "react-icons/bi";
 import Layout from "../shared/Layout/Layout";
+import Footer from "../shared/Navigations/Footer";
 
 const Cart = () => {
   const { cartItems, cartcout, HandleDeleteCart } = useContext(ProductContext);
@@ -51,8 +52,8 @@ const Cart = () => {
     }
   return (
    
-   
-    <Layout>
+   <div>
+    <Navbar/>
       <div className="min-h-screen bg-white  py-10 px-4 md:px-10 relative  ">
         <h1 className="text-3xl font-bold text-center mb-8">Your Cart</h1>
 
@@ -222,7 +223,8 @@ const Cart = () => {
          </div>
         )}
       </div>
-    </Layout>
+    <Footer/>
+      </div>
   );
 };
 

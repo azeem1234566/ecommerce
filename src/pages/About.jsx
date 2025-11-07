@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
 import { useLocation } from "react-router-dom";
 import Layout from "../shared/Layout/Layout";
+import Navbar from "../shared/Navigations/Navbar";
+import Footer from "../shared/Navigations/Footer";
 
 
 const About = () => {
@@ -20,7 +22,8 @@ const About = () => {
     );
   }
   return (
-    <Layout>
+    <div>
+      <Navbar />
       <div className="flex flex-col min-h-screen">
         {/* === HERO SECTION === */}
         <section className="bg-primary text-white py-24 text-center px-6">
@@ -104,7 +107,8 @@ const About = () => {
           </button>
         </section>
       </div>
-    </Layout>
+    <Footer/>
+    </div>
   );
 };
 
