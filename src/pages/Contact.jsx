@@ -3,8 +3,8 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
 
-import Navbar from "../shared/Navigations/Navbar";
-import Footer from "../shared/Navigations/Footer";
+import Navbar from "../shared/Navigations/Navbar.jsx";
+import Footer from "../shared/Navigations/Footer.jsx";
 
 
 

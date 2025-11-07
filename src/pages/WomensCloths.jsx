@@ -5,8 +5,8 @@ import LinesEllipsis from "react-lines-ellipsis";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import { SyncLoader } from "react-spinners";
-import Navbar from "../shared/Navigations/Navbar";
-import Footer from "../shared/Navigations/Footer";
+import Navbar from "../shared/Navigations/Navbar.jsx";
+import Footer from "../shared/Navigations/Footer.jsx";
 
 const WomensCloths = () => {
   const [few, setFew] = useState(null);

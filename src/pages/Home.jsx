@@ -36,8 +36,8 @@ import { FaArrowCircleRight, FaHeart, FaShoppingCart } from "react-icons/fa";
 import Test from "../Components/HomeComponents/Test";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../Context/ProductContext";
-import Navbar from "../shared/Navigations/Navbar";
-import Footer from "../shared/Navigations/Footer";
+import Navbar from "../shared/Navigations/Navbar.jsx";
+import Footer from "../shared/Navigations/Footer.jsx";
 
 
 

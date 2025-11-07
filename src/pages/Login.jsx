@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../Shared/Input";
-import Navbar from "../shared/Navigations/Navbar";
-import Footer from "../shared/Navigations/Footer";
+import Navbar from "../shared/Navigations/Navbar.jsx";
+import Footer from "../shared/Navigations/Footer.jsx";
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
