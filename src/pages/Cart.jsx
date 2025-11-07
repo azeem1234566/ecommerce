@@ -10,8 +10,9 @@ import { MdDeleteOutline } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { SyncLoader } from "react-spinners";
 import { BiDiamond } from "react-icons/bi";
-import Layout from "../shared/Layout/Layout";
+
 import Footer from "../shared/Navigations/Footer";
+import Navbar from "../shared/Navigations/Navbar";
 
 const Cart = () => {
   const { cartItems, cartcout, HandleDeleteCart } = useContext(ProductContext);

@@ -2,7 +2,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 import { SyncLoader } from "react-spinners";
-import Layout from "../shared/Layout/Layout";
+
 import Navbar from "../shared/Navigations/Navbar";
 import Footer from "../shared/Navigations/Footer";
 

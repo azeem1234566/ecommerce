@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import { SyncLoader } from "react-spinners";
 import { useLocation } from "react-router-dom";
-import Layout from "../shared/Layout/Layout";
 import Navbar from "../shared/Navigations/Navbar";
 import Footer from "../shared/Navigations/Footer";
 

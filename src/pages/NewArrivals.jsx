@@ -5,7 +5,6 @@ import LinesEllipsis from "react-lines-ellipsis";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import { SyncLoader } from "react-spinners";
-import Layout from "../shared/Layout/Layout";
 import Navbar from "../shared/Navigations/Navbar";
 import Footer from "../shared/Navigations/Footer";
 
